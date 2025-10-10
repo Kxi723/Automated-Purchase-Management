@@ -131,13 +131,14 @@ public class KHPurchaseManagerGUI extends JFrame {
         loadItems(tableModel, "");
 
         searchField.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyReleased(KeyEvent e) {
                 String text = searchField.getText();
                 loadItems(tableModel, text);
             }
         });
 
-        backButton.addActionListener((ActionEvent e) -> cardLayout.show(mainPanel, "Menu"));
+        backButton.addActionListener((ActionEvent _) -> cardLayout.show(mainPanel, "Menu"));
 
         // ===== SUPPLIER FULL PANEL =====
         JPanel supplierPanel = new JPanel();
@@ -173,13 +174,14 @@ public class KHPurchaseManagerGUI extends JFrame {
         loadSuppliers(tableModel2, "");
 
         searchField2.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyReleased(KeyEvent e) {
                 String text2 = searchField2.getText();
                 loadSuppliers(tableModel2, text2);
             }
         });
 
-        backButton2.addActionListener((ActionEvent e) -> cardLayout.show(mainPanel, "Menu"));
+        backButton2.addActionListener((ActionEvent _) -> cardLayout.show(mainPanel, "Menu"));
 
         // ===== PURCHASE REQUISITION FULL PANEL =====
         JPanel requisitionPanel = new JPanel();
@@ -215,13 +217,14 @@ public class KHPurchaseManagerGUI extends JFrame {
         loadPurchaseRequisitions(tableModel3, "");
 
         searchField3.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyReleased(KeyEvent e) {
                 String text3 = searchField3.getText();
                 loadPurchaseRequisitions(tableModel3, text3);
             }
         });
 
-        backButton3.addActionListener((ActionEvent e) -> cardLayout.show(mainPanel, "Menu"));
+        backButton3.addActionListener((ActionEvent _) -> cardLayout.show(mainPanel, "Menu"));
 
         // ===== DISPLAY PURCHASE ORDERS FULL PANEL =====
         JPanel displayOrdersPanel = new JPanel();
@@ -257,13 +260,14 @@ public class KHPurchaseManagerGUI extends JFrame {
         loadPurchaseOrders(tableModel4, "");
 
         searchField4.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyReleased(KeyEvent e) {
                 String text4 = searchField4.getText();
                 loadPurchaseOrders(tableModel4, text4);
             }
         });
 
-        backButton4.addActionListener((ActionEvent e) -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
+        backButton4.addActionListener((ActionEvent _) -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
 
         // ===== CREATE PURCHASE ORDER - SELECT PR PANEL =====
         JPanel selectPRPanel = new JPanel();
@@ -305,13 +309,14 @@ public class KHPurchaseManagerGUI extends JFrame {
         loadPurchaseRequisitions(tableModel5, "");
 
         searchField5.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyReleased(KeyEvent e) {
                 String text5 = searchField5.getText();
                 loadPurchaseRequisitions(tableModel5, text5);
             }
         });
 
-        backButton5.addActionListener((ActionEvent e) -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
+        backButton5.addActionListener((ActionEvent _) -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
 
         // ===== CREATE PURCHASE ORDER - FORM PANEL =====
         JPanel createPOFormPanel = new JPanel();
@@ -503,15 +508,15 @@ public class KHPurchaseManagerGUI extends JFrame {
         add(mainPanel); // Add card layout panel to the frame
 
         // Set up button action listeners
-        viewItemsButton.addActionListener(e -> cardLayout.show(mainPanel, "Items"));
-        viewSuppliersButton.addActionListener(e -> cardLayout.show(mainPanel, "Suppliers"));
-        viewRequisitionsButton.addActionListener(e -> cardLayout.show(mainPanel, "Requisitions"));
-        manageOrdersButton.addActionListener(e -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
+        viewItemsButton.addActionListener(_ -> cardLayout.show(mainPanel, "Items"));
+        viewSuppliersButton.addActionListener(_ -> cardLayout.show(mainPanel, "Suppliers"));
+        viewRequisitionsButton.addActionListener(_ -> cardLayout.show(mainPanel, "Requisitions"));
+        manageOrdersButton.addActionListener(_ -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
 
         // Purchase Order menu button listeners
-        backToPOMenu.addActionListener(e -> cardLayout.show(mainPanel, "Menu"));
-        displayOrdersButton.addActionListener(e -> cardLayout.show(mainPanel, "DisplayOrders"));
-        createOrderButton.addActionListener(e -> cardLayout.show(mainPanel, "SelectPR"));
+        backToPOMenu.addActionListener(_ -> cardLayout.show(mainPanel, "Menu"));
+        displayOrdersButton.addActionListener(_ -> cardLayout.show(mainPanel, "DisplayOrders"));
+        createOrderButton.addActionListener(_ -> cardLayout.show(mainPanel, "SelectPR"));
 
         // Table selection listener for PR selection
         table5.getSelectionModel().addListSelectionListener(e -> {
@@ -546,7 +551,7 @@ public class KHPurchaseManagerGUI extends JFrame {
         });
 
         // Form button listeners
-        createButton.addActionListener(e -> {
+        createButton.addActionListener(_ -> {
             String pmName = pmNameField.getText().trim();
             if (pmName.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Please enter PM Name", "Error", JOptionPane.ERROR_MESSAGE);
@@ -577,7 +582,7 @@ public class KHPurchaseManagerGUI extends JFrame {
             }
         });
 
-        cancelButton.addActionListener(e -> cardLayout.show(mainPanel, "SelectPR"));
+        cancelButton.addActionListener(_ -> cardLayout.show(mainPanel, "SelectPR"));
 
         // ===== EDIT/DELETE PURCHASE ORDER PANEL =====
         // Add this after the createPOFormPanel section and before purchaseOrderMenuPanel
@@ -621,13 +626,14 @@ public class KHPurchaseManagerGUI extends JFrame {
         loadPurchaseOrders(tableModel7, "");
 
         searchField7.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyReleased(KeyEvent e) {
                 String text7 = searchField7.getText();
                 loadPurchaseOrders(tableModel7, text7);
             }
         });
 
-        backButton7.addActionListener((ActionEvent e) -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
+        backButton7.addActionListener((ActionEvent _) -> cardLayout.show(mainPanel, "PurchaseOrderMenu"));
 
         // ===== EDIT PURCHASE ORDER FORM PANEL =====
         // Add this after the editDeleteOrderPanel
@@ -762,7 +768,7 @@ public class KHPurchaseManagerGUI extends JFrame {
 
         // MODIFY THE EXISTING editDeleteOrderButton ACTION LISTENER
         // Replace the TODO comment with this:
-        editDeleteOrderButton.addActionListener(e -> {
+        editDeleteOrderButton.addActionListener(_ -> {
             loadPurchaseOrders(tableModel7, ""); // Refresh the table
             cardLayout.show(mainPanel, "EditDeleteOrder");
         });
@@ -839,7 +845,7 @@ public class KHPurchaseManagerGUI extends JFrame {
         });
 
         // Update button listener for edit form
-        updateButton.addActionListener(e -> {
+        updateButton.addActionListener(_ -> {
             String poId = editPoIdField.getText();
             String newShippingStatus = (String) editShippingStatusCombo.getSelectedItem();
             String newApprovalStatus = (String) editApprovalStatusCombo.getSelectedItem();
@@ -856,7 +862,7 @@ public class KHPurchaseManagerGUI extends JFrame {
             }
         });
 
-        cancelEditButton.addActionListener(e -> cardLayout.show(mainPanel, "EditDeleteOrder"));
+        cancelEditButton.addActionListener(_ -> cardLayout.show(mainPanel, "EditDeleteOrder"));
 
         cardLayout.show(mainPanel, "Menu"); // Show menu on start
         setVisible(true);
@@ -888,7 +894,7 @@ public class KHPurchaseManagerGUI extends JFrame {
                 }
             }
         } catch (IOException | NumberFormatException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -914,7 +920,7 @@ public class KHPurchaseManagerGUI extends JFrame {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -946,7 +952,7 @@ public class KHPurchaseManagerGUI extends JFrame {
                 }
             }
         } catch (IOException | NumberFormatException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -982,7 +988,7 @@ public class KHPurchaseManagerGUI extends JFrame {
                 }
             }
         } catch (IOException | NumberFormatException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -1005,7 +1011,7 @@ public class KHPurchaseManagerGUI extends JFrame {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return String.format("PO%03d", maxId + 1);
     }
@@ -1017,7 +1023,7 @@ public class KHPurchaseManagerGUI extends JFrame {
             out.println(order.toString());
             return true;
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return false;
         }
     }
@@ -1046,7 +1052,7 @@ private boolean deletePurchaseOrder(String poId) {
         }
         return true;
     } catch (IOException e) {
-        e.printStackTrace();
+        //e.printStackTrace();
         return false;
     }
 }
@@ -1079,7 +1085,7 @@ private boolean updatePurchaseOrder(String poId, String newShippingStatus, Strin
         }
         return true;
     } catch (IOException e) {
-        e.printStackTrace();
+        //e.printStackTrace();
         return false;
     }
 }

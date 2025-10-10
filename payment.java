@@ -38,6 +38,7 @@ public class payment extends YCBaseFrame {
         table = new JTable(model);
         table.setRowSorter(new TableRowSorter<>(model));
         table.addMouseListener(new MouseAdapter() {
+            @Override
             public void mouseClicked(MouseEvent e) {
                 int row = table.getSelectedRow();
                 if (row != -1) {
@@ -54,8 +55,8 @@ public class payment extends YCBaseFrame {
         JButton paymentBtn = new JButton("Pay");
         JButton backButton = new JButton("Back");
 
-        paymentBtn.addActionListener(e -> pay("Payment.txt"));
-        backButton.addActionListener(e -> {
+        paymentBtn.addActionListener(_ -> pay("Payment.txt"));
+        backButton.addActionListener(_ -> {
             dispose();
             goBack();
         });

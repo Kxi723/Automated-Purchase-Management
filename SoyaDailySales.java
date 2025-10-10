@@ -24,12 +24,12 @@ public class SoyaDailySales extends SoyaSalesManager{
     private int rowsFoundTable;
     private int columns;
     private int countEdit = 0;
-    private String fileName = "Daily Sale Record.txt";
+    private final String fileName = "Daily Sale Record.txt";
     private String[][] salesData;
     private String[][] salesAfter;
     private String[][] salesFound;
-    private String[] title = {"No.", "Item ID", "Quantity", "Sales Price", "Total Sales", "Date", "SM Name"};
-    private String[] itemTitle = {"No.", "Item ID", "Description", "Supplier ID", "Unit Price", "Sales Price"};
+    private final String[] title = {"No.", "Item ID", "Quantity", "Sales Price", "Total Sales", "Date", "SM Name"};
+    private final String[] itemTitle = {"No.", "Item ID", "Description", "Supplier ID", "Unit Price", "Sales Price"};
     private String showItemID;
     private String showQuantity;
     private String showPrice;
@@ -63,7 +63,7 @@ public class SoyaDailySales extends SoyaSalesManager{
         JButton buttonBackMain = new JButton("Back to Main Page");
         JButton buttonSearch = new JButton("Search");
         JButton buttonRestore = new JButton("Restore Table");
-        JButton buttonStock = new JButton("View Stock");
+        //JButton buttonStock = new JButton("View Stock");
         JTextField textSearchBar = new JTextField();
         JLabel labelFunction = new JLabel("Daily Sales Record");
         JLabel labelSearch = new JLabel("Enter Item ID to search");
